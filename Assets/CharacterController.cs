@@ -8,14 +8,14 @@ public class CharacterController : MonoBehaviour
     float rotation = 0.0f;
     float camRotation = 0.0f;
     float rotationSpeed = 2.0f;
-    float camRotationSpeed = 1.5f;
+    float camRotationSpeed = 0.5f;
     GameObject cam;
     Rigidbody myRigidbody;
 
     bool isOnGround;
     public GameObject groundChecker;
     public LayerMask groundLayer;
-    public float jumpForce = 300.0f;
+    public float jumpForce = 1.0f;
     // Start is called before the first frame update
     void Start()
     {
