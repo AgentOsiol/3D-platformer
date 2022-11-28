@@ -12,6 +12,8 @@ public class CharacterController : MonoBehaviour
     GameObject cam;
     Rigidbody myRigidbody;
 
+    Vector3 endArea = new Vector3 (40.17f, 27.986f, 24.63f);
+
     bool isOnGround;
     public GameObject groundChecker;
     public LayerMask groundLayer;
@@ -21,6 +23,7 @@ public class CharacterController : MonoBehaviour
     {
         cam = GameObject.Find("Main Camera");
         myRigidbody = GetComponent<Rigidbody>();
+
     }
 
     // Update is called once per frame
@@ -42,5 +45,13 @@ public class CharacterController : MonoBehaviour
        camRotation = camRotation + Input.GetAxis("Mouse Y") * camRotationSpeed;
        cam.transform.localRotation = Quaternion.Euler(new Vector3(camRotation, 0.1f, 0.01f));
 
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "GameEnd")
+        {
+            Transform.Position = endArea;
+        }
     }
 }
