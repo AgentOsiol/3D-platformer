@@ -1112,7 +1112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 150601377}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: game end waypoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3713,6 +3713,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 8650269221565669055, guid: 61c8330bfbd8a8949bcd2e633debaf39, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8.056
+      objectReference: {fileID: 0}
     - target: {fileID: 8653909006750398859, guid: 61c8330bfbd8a8949bcd2e633debaf39, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -5462,6 +5466,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   jumpForce: 200
+  gameEndWaypoint: {fileID: 150601376}
 --- !u!54 &1067284387
 Rigidbody:
   m_ObjectHideFlags: 0

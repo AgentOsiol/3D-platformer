@@ -11,13 +11,14 @@ public class CharacterController : MonoBehaviour
     float camRotationSpeed = 0.5f;
     GameObject cam;
     Rigidbody myRigidbody;
-
-    Vector3 endArea = new Vector3 (40.17f, 27.986f, 24.63f);
+    
 
     bool isOnGround;
     public GameObject groundChecker;
     public LayerMask groundLayer;
     public float jumpForce = 1.0f;
+
+    public GameObject gameEndWaypoint;
     // Start is called before the first frame update
     void Start()
     {
@@ -47,11 +48,12 @@ public class CharacterController : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other) 
     {
-        if(other.tag == "GameEnd")
+        if (other.tag == "GameEnd")
         {
-            Transform.Position = endArea;
+            transform.position = gameEndWaypoint.transform.position;
         }
     }
+
 }
