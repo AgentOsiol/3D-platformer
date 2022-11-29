@@ -18,6 +18,7 @@ public class CharacterController : MonoBehaviour
     public LayerMask groundLayer;
     public float jumpForce = 1.0f;
 
+    public GameObject startGameWaypoint;
     public GameObject gameEndWaypoint;
     // Start is called before the first frame update
     void Start()
@@ -54,6 +55,17 @@ public class CharacterController : MonoBehaviour
         {
             transform.position = gameEndWaypoint.transform.position;
         }
-    }
 
+        if (other.tag == "GameStartButton")
+        {
+            transform.position = startGameWaypoint.transform.position;
+        }
+
+        if (other.tag == "QuitGameButton")
+        {
+            Application.Quit();
+            Debug.Log("E");
+        }
+
+    }
 }

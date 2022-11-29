@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - GameEnd
+  - GameStartButton
+  - QuitGameButton
   layers:
   - Default
   - TransparentFX
