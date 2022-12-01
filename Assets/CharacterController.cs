@@ -20,9 +20,11 @@ public class CharacterController : MonoBehaviour
 
     public GameObject startGameWaypoint;
     public GameObject gameEndWaypoint;
+     Animator myAnim;
     // Start is called before the first frame update
     void Start()
     {
+        myAnim = GetComponentInChildren<Animator>();
         cam = GameObject.Find("Main Camera");
         myRigidbody = GetComponent<Rigidbody>();
 
@@ -31,14 +33,18 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         isOnGround = Physics.CheckSphere(groundChecker.transform.position, 0.1f, groundLayer);
+        myAnim.SetBool("isOnGround", isOnGround);
        //transform.position = transform.position + (transform.forward * Input.GetAxis("Vertical") * maxSpeed);
        if (isOnGround == true && Input.GetKeyDown(KeyCode.Space))
        {
+           myAnim.SetTrigger("jumped");
            myRigidbody.AddForce(transform.up * jumpForce);
        }
 
        Vector3 newVelocity = transform.forward * Input.GetAxis("Vertical") * maxSpeed;
+       myAnim.SetFloat("speed",newVelocity.magnitude);
        myRigidbody.velocity = new Vector3(newVelocity.x, myRigidbody.velocity.y, newVelocity.z);
 
        rotation = rotation + Input.GetAxis("Mouse X") * rotationSpeed;
