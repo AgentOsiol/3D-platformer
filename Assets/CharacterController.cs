@@ -20,11 +20,11 @@ public class CharacterController : MonoBehaviour
 
     public GameObject startGameWaypoint;
     public GameObject gameEndWaypoint;
-     Animator myAnim;
+    public Animator myAnim;
     // Start is called before the first frame update
     void Start()
     {
-        myAnim = GetComponentInChildren<Animator>();
+       
         cam = GameObject.Find("Main Camera");
         myRigidbody = GetComponent<Rigidbody>();
 
@@ -36,6 +36,7 @@ public class CharacterController : MonoBehaviour
         
         isOnGround = Physics.CheckSphere(groundChecker.transform.position, 0.1f, groundLayer);
         myAnim.SetBool("isOnGround", isOnGround);
+        
        //transform.position = transform.position + (transform.forward * Input.GetAxis("Vertical") * maxSpeed);
        if (isOnGround == true && Input.GetKeyDown(KeyCode.Space))
        {
