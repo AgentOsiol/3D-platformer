@@ -73,6 +73,10 @@ public class CharacterController : MonoBehaviour
             Application.Quit();
             Debug.Log("E");
         }
+        
+        
 
     }
+
+    
 }
