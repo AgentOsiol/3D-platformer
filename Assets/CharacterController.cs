@@ -33,7 +33,11 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown("m"))
+        {
+            transform.position = gameEndWaypoint.transform.position;
+        }
+
         isOnGround = Physics.CheckSphere(groundChecker.transform.position, 0.1f, groundLayer);
         myAnim.SetBool("isOnGround", isOnGround);
         
@@ -78,5 +82,8 @@ public class CharacterController : MonoBehaviour
 
     }
 
-    
+   
+
+
+
 }
