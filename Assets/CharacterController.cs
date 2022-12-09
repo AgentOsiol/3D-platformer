@@ -24,7 +24,7 @@ public class CharacterController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
+        Cursor.lockState = CursorLockMode.Locked;
         cam = GameObject.Find("Main Camera");
         myRigidbody = GetComponent<Rigidbody>();
 
